@@ -2,7 +2,7 @@
 
 ✅ I am a front-end developer with back-end development skills. 
 
-✅ I have {{ YEARS }} years of experience.
+✅ I have 9 years of experience.
 
 ## 🧘‍♀️ My focus
 My focus has been on creating user-friendly, scalable applications that function smoothly and provide an engaging user experience. I’m all about creating high-quality solutions that make life easier for users while maintaining strong visual design. 
