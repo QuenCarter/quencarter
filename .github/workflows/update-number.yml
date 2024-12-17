@@ -2,8 +2,8 @@ name: Update Years in README
 
 on:
   schedule:
-    - cron: "0 0 1 1 *" # Runs at midnight on January 1st
-  workflow_dispatch: # Allows you to manually trigger the workflow
+    - cron: "0 0 1 1 *" # Runs at midnight on January 1st every year
+  workflow_dispatch: # Allows manual workflow trigger
 
 jobs:
   update-readme:
@@ -15,7 +15,7 @@ jobs:
 
       - name: Calculate Years and Update README
         run: |
-          # Define the starting year (e.g., the year you began the project)
+          # Define the year the project started
           START_YEAR=2015
 
           # Get the current year
@@ -26,7 +26,7 @@ jobs:
 
           echo "Updating README with $YEARS years..."
 
-          # Replace the placeholder {{ YEARS }} in README.md
+          # Replace the placeholder {{ YEARS }} in README.md with the calculated value
           sed -i "s/{{ YEARS }}/$YEARS/g" README.md
 
       - name: Commit and Push Changes
