@@ -2,8 +2,8 @@ name: Update Years in README
 
 on:
   schedule:
-    - cron: "0 0 1 1 *" # Runs at midnight on January 1st every year
-  workflow_dispatch: # Allows manual workflow trigger
+    - cron: "0 0 1 1 *"  # Runs at midnight on January 1st every year
+  workflow_dispatch:  # Allows manual workflow trigger
 
 jobs:
   update-readme:
@@ -30,6 +30,18 @@ jobs:
           sed -i "s/{{ YEARS }}/$YEARS/g" README.md
 
       - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Update years to $YEARS years"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the stored GitHub token
+        run: |
+          # Configure Git with the GitHub Actions bot user info
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage the README file
+          git add README.md
+
+          # Commit the changes
+          git commit -m "Update years to $YEARS years"
+
+          # Push the changes back to the repository using the token
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:main
