@@ -1,0 +1,35 @@
+name: Update Years in README
+
+on:
+  schedule:
+    - cron: "0 0 1 1 *" # Runs at midnight on January 1st
+  workflow_dispatch: # Allows you to manually trigger the workflow
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Calculate Years and Update README
+        run: |
+          # Define the starting year (e.g., the year you began the project)
+          START_YEAR=2015
+
+          # Get the current year
+          CURRENT_YEAR=$(date +'%Y')
+
+          # Calculate the number of years
+          YEARS=$((CURRENT_YEAR - START_YEAR))
+
+          echo "Project has been running for $YEARS years."
+
+          # Replace the placeholder {YEARS} in README.md
+          sed -i "s/[0-9]\+ years/$YEARS years/g" README.md
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update years to $YEARS years"
