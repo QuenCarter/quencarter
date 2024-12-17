@@ -24,10 +24,10 @@ jobs:
           # Calculate the number of years
           YEARS=$((CURRENT_YEAR - START_YEAR))
 
-          echo "Project has been running for $YEARS years."
+          echo "Updating README with $YEARS years..."
 
-          # Replace the placeholder {YEARS} in README.md
-          sed -i "s/[0-9]\+ years/$YEARS years/g" README.md
+          # Replace the placeholder {{ YEARS }} in README.md
+          sed -i "s/{{ YEARS }}/$YEARS/g" README.md
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
