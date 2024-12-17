@@ -25,9 +25,11 @@ My focus has been on creating user-friendly, scalable applications that function
 **Collaboration & Leadership:** Collaboration ​with ​Cross-functional ​Teams, Effective ​Communication, Mentor, Team ​Collaboration
 
 ## 🆕 What's New
-✅  I'm enjoying the process of re-entering the tech field. So, what better way than to start working on public repos **and stop it with the private WIPs 🤦🏽‍♀️**
+✅ I'm enjoying the process of re-entering the tech field. So, what better way than to start working on public repos **and stop it with the private WIPs 🤦🏽‍♀️**
 
 ✅ I'm working on rebranding @Placidbits, a software development company I co-own. I'm excited to work alongside my husband, @plasmarocker! He's a cool dude!
+
+✅ I'm finally picking a hobby! I'm torn between product photography and sewing. 🤔
 
 ## 📫 How to reach me: 
 🎶Call me, beep me if you're trying to reach me. 🎶 
